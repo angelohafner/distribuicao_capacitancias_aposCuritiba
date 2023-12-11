@@ -7,14 +7,14 @@ st.markdown("#### Entre com o número de capacitores em série, em paralelo e co
 # Parâmetros da matriz de capacitores
 col1, col2, col3 = st.columns(3)
 with col1:
-    n_col = st.number_input("Número de capacitores série",     min_value=0, max_value=10, step=1, format='%d', value=2)
+    n_lin = st.number_input("Número de capacitores série",     min_value=0, max_value=10, step=1, format='%d', value=2)
 with col2:
-    n_lin = st.number_input("Número de capacitores paralelos", min_value=0, max_value=10, step=1, format='%d', value=2)
+    n_col = st.number_input("Número de capacitores paralelos", min_value=0, max_value=10, step=1, format='%d', value=2)
 with col3:
     n_ban = st.number_input("Número de bancos de capacitores", min_value=0, max_value=10, step=1, format='%d', value=1)
 
 st.markdown(f"Configuração modelo de um banco de capacitores dupla estrela isolada (se repete para cada banco de capacitor)")
-fig = CapacitoresY.generate_and_save_capacitor_plot(m=n_col, n=n_lin, d=2.0, horizontal_spacing=5, filename='capacitores.png')
+fig = CapacitoresY.generate_and_save_capacitor_plot(m=n_lin, n=n_col, d=2.0, horizontal_spacing=5, filename='capacitores.png')
 st.pyplot(fig)
 
 
